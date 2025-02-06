@@ -1,0 +1,68 @@
+/* dark_styles.css */
+
+/* Шапка */
+#header {
+  background: #333;
+  color: #fff;
+}
+
+/* Панель проектов */
+#projects-list {
+  background: #2d2d2d;
+  color: #fff;
+}
+
+#projects-container .project-item {
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+#toolbar {
+  background: #333;
+  color: #fff;
+}
+
+#editor-container {
+  background: #2b2b2b;
+  color: #fff;
+}
+
+#editor {
+  background: #2b2b2b;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+/* Прогресс-бар */
+#upload-progress .progress-bar {
+  background-color: #17a2b8;
+}
+
+/* Контекстное меню (темная тема) */
+.context-menu {
+  background: #333;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+.context-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.context-menu ul li {
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.context-menu ul li:hover {
+  background-color: #555;
+}

@@ -1,0 +1,214 @@
+body { 
+  margin: 0; 
+  padding: 0; 
+  font-family: 'Roboto', sans-serif; 
+}
+
+/* Шапка */
+#header {
+  background: #007bff;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header h4 { 
+  margin: 0; 
+}
+
+/* Панель проектов */
+#projects-list {
+  background: #f8f9fa;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+  height: calc(100vh - 50px);
+}
+#search-projects {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  #projects-list { 
+    display: none; 
+    position: fixed; 
+    top: 50px; 
+    left: 0; 
+    width: 80%; 
+    height: calc(100vh - 50px); 
+    z-index: 1000; 
+    background: #fff; 
+    border-right: 1px solid #ccc; 
+  }
+  #toggle-projects { 
+    display: block; 
+  }
+}
+@media (min-width: 769px) {
+  #toggle-projects { 
+    display: none; 
+  }
+}
+
+.project-item {
+  padding: 5px;
+  margin-bottom: 5px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.project-item.selected { 
+  background: #e2e6ea; 
+}
+.proj-name::before {
+  content: attr(data-fav);
+  color: gold;
+  margin-right: 5px;
+  font-size: 16px;
+}
+.project-item .mobile-options {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 768px) {
+  .project-item .mobile-options { 
+    display: inline-block; 
+  }
+}
+
+/* Контекстное меню */
+.context-menu { 
+  position: absolute; 
+  z-index: 2000; 
+  background: #fff; 
+  border: 1px solid #ccc; 
+  display: none;
+  width: 150px;
+  border-radius: 3px;
+}
+.context-menu ul { 
+  list-style: none; 
+  margin: 0; 
+  padding: 5px 0; 
+}
+.context-menu ul li { 
+  padding: 5px 10px; 
+  cursor: pointer; 
+}
+.context-menu ul li:hover { 
+  background-color: #eee; 
+}
+
+/* Панель инструментов редактора */
+#toolbar {
+  background: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+#toolbar button, 
+#toolbar select, 
+#toolbar input[type="color"] {
+  margin: 2px;
+}
+
+/* Стили для цитаты */
+blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 10px;
+  font-style: italic;
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Стили для кликабельной ссылки */
+.clickable-link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Стили для нажимного текста */
+.clickable-text {
+  border: 1px dashed #007bff;
+  padding: 2px 5px;
+  cursor: pointer;
+  background: #f0f8ff;
+  position: relative;
+}
+.clickable-text .copy-icon {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Область редактора */
+#editor-container {
+  padding: 10px;
+  height: calc(100vh - 50px - 50px);
+  overflow-y: auto;
+}
+#editor {
+  width: 100%;
+  min-height: 100%;
+  border: none;
+  outline: none;
+}
+/* Изображения по умолчанию центрированы */
+#editor img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  cursor: pointer;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* Кастомный аудиоплеер – не редактируемый */
+.custom-audio {
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 3px;
+  background: #f9f9f9;
+}
+.custom-audio[contenteditable="false"] {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Модальное окно для камеры */
+#camera-modal {
+  display: none;  /* Изначально скрыто */
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0,0,0,0.8); 
+  z-index: 3000; 
+  /* Удалена повторяющаяся строка display: flex; */
+  align-items: center; 
+  justify-content: center;
+}
